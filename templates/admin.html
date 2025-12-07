@@ -9,6 +9,17 @@
 <body>
     <div class="container mt-5">
         <h1>Quản lý người dùng</h1>
+
+        <!-- Data Management -->
+        <div class="mb-4">
+            <h3>Sao lưu và khôi phục dữ liệu</h3>
+            <a href="{{ url_for('export_data') }}" class="btn btn-success mr-2">Xuất dữ liệu (JSON)</a>
+            <form method="POST" action="{{ url_for('import_data') }}" enctype="multipart/form-data" style="display:inline;">
+                <input type="file" name="file" accept=".json" required class="form-control-file d-inline mr-2" style="width: auto;">
+                <button type="submit" class="btn btn-warning" onclick="return confirm('Bạn có chắc muốn nhập dữ liệu?')">Nhập dữ liệu</button>
+            </form>
+        </div>
+
         <table class="table table-striped">
             <thead>
                 <tr>

@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+import json
+from flask import Flask, render_template, request, redirect, url_for, flash, session, Response
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -120,4 +121,52 @@ def delete_user(user_id):
 @app.route('/admin_logout')
 def admin_logout():
     session.pop('admin', None)
+    return redirect(url_for('admin'))
+
+@app.route('/export_data')
+def export_data():
+    if not session.get('admin'):
+        flash('Access denied!')
+        return redirect(url_for('admin'))
+    users = User.query.all()
+    data = []
+    for user in users:
+        data.append({
+            'id': user.id,
+            'name': user.name,
+            'username': user.username,
+            'password': user.password,  # hashed
+            'referral': user.referral
+        })
+    json_data = json.dumps(data, indent=4, ensure_ascii=False)
+    response = Response(json_data, mimetype='application/json')
+    response.headers['Content-Disposition'] = 'attachment; filename=users_backup.json'
+    return response
+
+@app.route('/import_data', methods=['POST'])
+def import_data():
+    if not session.get('admin'):
+        flash('Access denied!')
+        return redirect(url_for('admin'))
+    file = request.files.get('file')
+    if not file:
+        flash('No file selected!')
+        return redirect(url_for('admin'))
+    try:
+        data = json.load(file)
+        for item in data:
+            # Check if user exists
+            existing = User.query.filter_by(username=item['username']).first()
+            if not existing:
+                new_user = User(
+                    name=item['name'],
+                    username=item['username'],
+                    password=item['password'],  # assume hashed
+                    referral=item.get('referral')
+                )
+                db.session.add(new_user)
+        db.session.commit()
+        flash('Data imported successfully!')
+    except Exception as e:
+        flash(f'Import failed: {str(e)}')
     return redirect(url_for('admin'))
