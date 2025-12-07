@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .admin-login-container { max-width: 400px; margin: 50px auto; }
+        .admin-login-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .bg-gradient-1 { background: linear-gradient(45deg, #007bff, #0056b3); }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="card admin-login-card">
+            <div class="p-4">
+                <h4 class="text-center mb-4">Admin Login</h4>
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="text-center my-4">
+                        <button type="submit" class="btn bg-gradient-1 py-2 border-0 text-light btn-block">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

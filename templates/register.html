@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golike - Đăng ký</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .register-container { max-width: 400px; margin: 50px auto; }
+        .register-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .bg-gradient-1 { background: linear-gradient(45deg, #007bff, #0056b3); }
+        .font-semi-bold { font-weight: 600; }
+        .b200 { font-weight: 200; }
+        .cursor-pointer { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="card register-card">
+            <div class="p-4">
+                <form method="POST" data-gtm-form-interact-id="1">
+                    <div class="form-group">
+                        <label for="name" class="font-semi-bold">Họ và tên</label>
+                        <input id="name" type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="font-semi-bold">Tên đăng nhập</label>
+                        <input id="username" type="text" name="username" class="form-control" data-gtm-form-interact-field-id="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="font-semi-bold">Mật khẩu</label>
+                        <input id="password" type="password" name="password" class="form-control" data-gtm-form-interact-field-id="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_confirm" class="font-semi-bold">Nhập lại mật khẩu</label>
+                        <input id="password_confirm" type="password" name="password_confirm" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="referral" class="font-semi-bold">Người giới thiệu</label>
+                        <input id="referral" type="text" name="referral" class="form-control">
+                    </div>
+                    <label>
+                        <small>Link chính sách bảo mật dữ liệu cá nhân <a target="_blank" href="https://golike.net/quy-dinh-ve-thu-thap-du-lieu-ca-nhan/">tại đây</a></small><br>
+                        <input type="checkbox" required> Tôi đồng ý với các điều khoản và chính sách bảo mật dữ liệu cá nhân của ứng dụng
+                    </label>
+                    <div class="text-center my-4">
+                        <button type="submit" class="btn bg-gradient-1 py-2 border-0 text-light btn-block">Đăng ký</button>
+                    </div>
+                    <div class="text-right">
+                        <span class="b200 cursor-pointer"><a href="{{ url_for('login') }}">Trở về</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

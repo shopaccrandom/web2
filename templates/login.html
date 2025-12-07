@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golike - Đăng nhập</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .login-container { max-width: 400px; margin: 50px auto; }
+        .login-card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .bg-gradient-1 { background: linear-gradient(45deg, #007bff, #0056b3); }
+        .font-22 { font-size: 22px; }
+        .font-semi-bold { font-weight: 600; }
+        .text-light { color: #f8f9fa !important; }
+        .font-login { font-size: 18px; margin-bottom: 20px; }
+        .b200 { font-weight: 200; }
+        .maintenance { color: #007bff; }
+        .group-icon { margin-bottom: 10px; }
+        .cursor-pointer { cursor: pointer; }
+        .red { color: red; }
+    </style>
+</head>
+<body>
+    <div class="login-container login">
+        <img src="/img/group-icon.2541c6eb.png" alt="group-icon" width="50" class="group-icon">
+        <h4 class="b200 maintenance font-22">Golike.net</h4>
+        <p class="font-semi-bold text-light font-login">Đăng nhập</p>
+        <div class="card login-card">
+            <div class="p-4">
+                <form method="POST" data-gtm-form-interact-id="0">
+                    <div class="form-group">
+                        <label>Tên đăng nhập</label>
+                        <input required="required" type="text" name="username" class="form-control" data-gtm-form-interact-field-id="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <div class="position-relative">
+                            <input required="required" type="password" name="password" class="form-control" data-gtm-form-interact-field-id="1">
+                            <div class="form-check mt-3">
+                                <input type="checkbox" checked="checked" id="agreePolicy" class="form-check-input">
+                                <label for="agreePolicy" class="form-check-label">
+                                    Đồng ý với <a target="_blank" href="/policy" class="text-primary">Chính sách và quyền riêng tư (Privacy Policy)</a>
+                                </label>
+                            </div>
+                            <small class="float-right red my-2 mr-1 cursor-pointer"><em>Quên mật khẩu?</em></small>
+                            <div class="position-absolute mt-2 mr-3" style="top: 0px; right: 0px;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center my-4">
+                        <button type="submit" class="btn bg-gradient-1 py-2 border-0 text-light btn-block">Đăng nhập</button>
+                    </div>
+                    <div class="text-center">
+                        <span>Chưa có tài khoản? <span class="b200 cursor-pointer"><a href="{{ url_for('register') }}">Đăng ký</a></span></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
