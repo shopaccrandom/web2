@@ -39,7 +39,22 @@ with app.app_context():
 @app.route('/')
 @login_required
 def index():
+    return redirect(url_for('user'))
+
+@app.route('/user')
+@login_required
+def user():
     return render_template('index.html')
+
+@app.route('/user/nhiem-vu')
+@login_required
+def nhiem_vu():
+    return render_template('nhiem-vu.html')
+
+@app.route('/user/menu')
+@login_required
+def menu():
+    return render_template('menu.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -75,7 +90,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             login_user(user)
-            return redirect(url_for('index'))
+            return redirect(url_for('user'))
         flash('Invalid credentials')
     return render_template('login.html')
 

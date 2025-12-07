@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golike - Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="absolute top-[70px] left-0 w-full h-[calc(100vh-130px)] p-[10px] overflow-auto no-scrollbar mb-16">
+        <!-- Menu content will go here -->
+        <h1 class="text-center text-2xl font-bold">Menu</h1>
+        <p class="text-center">Chưa có menu nào.</p>
+    </div>
+    <div class="w-full bg-[#0A1828] h-16 flex items-center justify-between fixed bottom-0 left-0 right-0">
+        <ul class="flex justify-between items-center w-full">
+            <li class="w-1/5 text-base max-sm:text-sm">
+                <a href="/user">
+                    <div class="flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="pt-[6px] max-sm:text-sm text-center text-white">Trang chủ</p>
+                    </div>
+                </a>
+            </li>
+            <li class="w-1/5 text-base max-sm:text-sm">
+                <a href="/user/nhiem-vu">
+                    <div class="flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <svg stroke="currentColor" fill="gray" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path>
+                                <path d="m15 9-6 6"></path>
+                                <path d="M9 9h.01"></path>
+                                <path d="M15 15h.01"></path>
+                            </svg>
+                        </div>
+                        <p class="pt-[6px] max-sm:text-sm text-center text-white">Nhiệm vụ</p>
+                    </div>
+                </a>
+            </li>
+            <li class="w-1/5 text-base max-sm:text-sm">
+                <a href="/user/menu">
+                    <div class="flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <svg stroke="currentColor" fill="#05D6A0" stroke-width="0" viewBox="0 0 448 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+                            </svg>
+                        </div>
+                        <p class="pt-[6px] max-sm:text-sm text-center text-[#05D6A0]">Menu</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
